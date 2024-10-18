@@ -8,22 +8,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
+      
+        .navbar .nav-link {
+            color: #000;
+        }
+
+        .navbar .nav-link.active {
+            color: black;
+            font-weight: bold;
+        }
+
         .custom-navbar {
         background-color: #CDEDFF; /* Warna tomat */
         }
+
         .custom-navbar .navbar-nav .nav-link {
             color: black; /* Mengubah warna teks */
             font-weight: 100;
             
         }
+
+        .navbar {
+          background-color: #CDEDFF;
+          margin-bottom: 0px;
+        }
+
         body {
         font-family: 'Alegreya', serif;
         font-size: 20px;
-      }
-
-      .navbar {
-            margin-bottom: 0px;
         }
 
         svg {
@@ -37,24 +52,25 @@
 </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg custom-navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><strong>Atma Ticket</strong></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link active" aria-current="page" href="{{ url('/') }}"><strong><strong>Home</strong></strong></a>
-        <a class="nav-link" href="{{ url('/tiket') }}">Tiket</a>
-        <a class="nav-link" href="{{ url('/pesanan') }}">Pesanan</a>
-        <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
-        <a class="nav-link" href="{{ url('/login') }}">Login</a>
-        <a class="nav-link" href="{{ url('/register') }}">Register</a>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <i class="fas fa-plane-departure me-2"></i> Atma Ticket
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                  <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                  <a class="nav-link" href="{{url('/tiket')}}">Tiket</a>
+                  <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
+                  <a class="nav-link" href="{{url('/profile')}}">Profile</a>
+                  <a class="nav-link" href="#">Logout</a>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 <!-- end navbar -->
 
 <!-- waves -->
