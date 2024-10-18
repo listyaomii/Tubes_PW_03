@@ -26,3 +26,7 @@ Route::get('/register', function () {
 Route::get('/tiket', function () {
     return view('tiket');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
