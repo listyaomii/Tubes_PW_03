@@ -30,3 +30,7 @@ Route::get('/tiket', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/refund', function () {
+    return view('refund');
+});

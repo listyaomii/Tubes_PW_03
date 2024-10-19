@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
       
@@ -62,11 +63,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ms-auto">
-                  <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
-                  <a class="nav-link" href="{{url('/tiket')}}">Tiket</a>
+                  <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
+                  <a class="nav-link" href="{{ url('/tiket') }}">Tiket</a>
                   <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
-                  <a class="nav-link" href="{{url('/profile')}}">Profile</a>
-                  <a class="nav-link" href="#">Logout</a>
+                  <a class="nav-link" href="{{url('/refund')}}">Refund</a>
+                  <!-- <a class="nav-link" href="#">Login</a> -->
+                  <a class="nav-link" href="{{url('/profile')}}"><i class="bi bi-person-fill"></i></a>
               </div>
           </div>
       </div>
