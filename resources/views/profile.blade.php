@@ -4,9 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-bgn6yUMVZKsd4DDbm6LMniO0m2Bb+CTEpL2PRzv6ExTfIrs5KP4MQu1RxynP2Bzv" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
         /* Style untuk navbar */
         .navbar {
@@ -99,28 +104,33 @@
         .form-edit .btn {
             margin-right: 10px;
         }
+
+        .navbar .nav-link.active {
+            color: black;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-plane-departure me-2"></i> Atma Ticket
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="{{ url('/') }}">Home</a>
-                    <a class="nav-link" href="{{url('/tiket')}}">Tiket</a>
-                    <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
-                    <a class="nav-link active" aria-current="page" href="{{url('/profile')}}">Profile</a>
-                    <a class="nav-link" href="#">Logout</a>
-                </div>
-            </div>
-        </div>
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <i class="fas fa-plane-departure me-2"></i> Atma Ticket
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{url('/')}}">Home</a>
+                <a class="nav-link" href="{{url('/tiket')}}">Tiket</a>
+                <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
+                <a class="nav-link active" aria-current="page" href="{{ url('/profile') }}">Profile</a>
+                <a class="nav-link" href="#">Logout</a>
+              </div>
+          </div>
+      </div>
     </nav>
     <!-- end navbar -->
 
@@ -202,14 +212,14 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <button type="reset" class="btn btn-secondary">Batal</button>
+                <button type="reset" class="btn btn-danger">Batal</button>
             </form>
         </div>
     </div>
     <!-- end main content -->
 
     <!-- Modal Logout -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -228,7 +238,7 @@
     </div>
 
     <!-- Modal Delete Account -->
-    <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

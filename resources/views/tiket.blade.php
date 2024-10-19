@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cari Tiket</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
+
         .navbar .nav-link {
             color: #000;
         }
@@ -66,6 +69,10 @@
             filter: brightness(80%);
         }
 
+        .recommendation-card:hover{
+            transform: scale(1.03);
+        }
+
         .card-img-overlay {
             color: white;
             background: rgba(0, 0, 0, 0.4); /* Overlay semi-transparan */
@@ -99,33 +106,31 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan */
         }
 
-        .btn-search {
+        .btn{
             width:100px;
-            background-color: #5F2B93; /* Warna tombol */
-            color: white; /* Warna teks tombol */
         }
 
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-              <i class="fas fa-plane-departure me-2"></i> Atma Ticket
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav ms-auto">
-                  <a class="nav-link" href="{{url('/')}}">Home</a>
-                  <a class="nav-link active" aria-current="page" href="{{ url('/tiket') }}">Tiket</a>
-                  <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
-                  <a class="nav-link" href="{{url('/profile')}}">Profile</a>
-                  <a class="nav-link" href="#">Logout</a>
-              </div>
-          </div>
-      </div>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-plane-departure me-2"></i> Atma Ticket
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="{{url('/')}}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ url('/tiket') }}">Tiket</a>
+                    <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
+                    <a class="nav-link" href="{{url('/profile')}}">Profile</a>
+                    <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
     </nav>
 <div>
     <div class="position-relative">
@@ -161,7 +166,7 @@
                     </div>
                     <div class="col mb-3">
                         <label for="children" class="form-label">Anak-anak (< 2 tahun)</label><br>
-                        <input class="form-control" type="number" placeholder="Jumlah Anak-anak" id="children" min="0" max="100" required>
+                        <input class="form-control" type="number" placeholder="Jumlah Anak-anak (jika tidak ada, harap diisi 0)" id="children" min="0" max="100" required>
                     </div>
                 </div>
                 <div class="row">
@@ -179,33 +184,14 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-search">Cari</button>
+                    <button type="submit" class="btn btn-primary">Cari</button>
                 </div>
             </form>
             <script>
                 const validateForm = () => {
-                    const dari = document.getElementById('from').value;
-                    const ke = document.getElementById('to').value;
-                    const kelas = document.getElementById('class').value;
-                    const tgl = document.getElementById('date').value;
-                    const anak = document.getElementById('children').value;
-                    const dewasa = document.getElementById('adult').value;
-                    
-                    if(dari===""){
-                        alert("Keberangkatan tidak boleh kosong!");
-                    }else if(ke===""){
-                        alert("Tujuan tidak boleh kosong!");
-                    }else if(kelas===""){
-                        alert("Kelas penumpang tidak boleh kosong!");
-                    }else if(tgl===""){
-                        alert("Tanggal keberangkatan tidak boleh kosong!");
-                    }else if(anak===""){
-                        alert("penumpang anak-anak belum diinput!");
-                    }else if(dewasa===""){
-                        alert("penumpang dewasa belum diinput!");
-                    }else{
-                         alert("Data Anda Berhasil Disimpan !");
-                    }
+                    alert("Data Anda Berhasil Disimpan !");
+                    window.location.href = "{{ url('/tiketView') }}";
+                    return false;
                 }
             </script>
         </div>
@@ -216,7 +202,7 @@
     <h3 class="mb-4">Rekomendasi</h3>
     <div class="row">
         <!-- Card 1 -->
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12 mb-3">
             <div class="card recommendation-card">
                 <img src="imgs/bali.jpg" class="card-img" alt="Bali">
                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -225,12 +211,14 @@
                     <p class="divider"></p>
                     <p class="card-text">Starts from:</p>
                     <h6 class="card-price">Rp 659.000</h6>
-                    <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+                    <a href="{{url('/tiketView')}}" class="arrow" style="color: white;">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
         <!-- Card 2 -->
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12 mb-3">
             <div class="card recommendation-card">
                 <img src="imgs/jogja.jpg" class="card-img" alt="Bali">
                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -239,12 +227,14 @@
                     <p class="divider"></p>
                     <p class="card-text">Starts from:</p>
                     <h6 class="card-price">Rp 659.000</h6>
-                    <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+                    <a href="{{url('/tiketView')}}" class="arrow" style="color: white;">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12 mb-3">
             <div class="card recommendation-card">
                 <img src="imgs/bajo.jpg" class="card-img" alt="Bali">
                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -253,12 +243,14 @@
                     <p class="divider"></p>
                     <p class="card-text">Starts from:</p>
                     <h6 class="card-price">Rp 659.000</h6>
-                    <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+                    <a href="{{url('/tiketView')}}" class="arrow" style="color: white;">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12 mb-3">
             <div class="card recommendation-card">
                 <img src="imgs/medan.jpg" class="card-img" alt="Bali">
                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -267,7 +259,9 @@
                     <p class="divider"></p>
                     <p class="card-text">Starts from:</p>
                     <h6 class="card-price">Rp 659.000</h6>
-                    <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+                    <a href="{{url('/tiketView')}}" class="arrow" style="color: white;">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -275,6 +269,7 @@
 </div>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeo9w2MHAe0XlWJHrD/GA6iDh/s4n2bWXsb6YhShu5ZHQ3h" crossorigin="anonymous"></script>
 </html>
 
 

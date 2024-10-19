@@ -30,3 +30,44 @@ Route::get('/tiket', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/tiketView', function () {
+    return view('tiketView', [
+        'tiketList' => [
+            [
+            'maskapai' => "TransNusa",
+            'jamBerangkat' => "07:00",
+            'berangkat' => "CGK",
+            'durasi' => "1j 40m",
+            'tipe' => "langsung",
+            'jamTiba' => "08:40",
+            'tujuan' => "DPS",
+            'harga' => "890.000",
+            ],
+            [
+            'maskapai' => "Lion Air",
+            'jamBerangkat' => "08:00",
+            'berangkat' => "CGK",
+            'durasi' => "1j 45m",
+            'tipe' => "langsung",
+            'jamTiba' => "09:45",
+            'tujuan' => "DPS",
+            'harga' => "950.000",
+            ],
+            [
+            'maskapai' => "Citilink",
+            'jamBerangkat' => "06:00",
+            'berangkat' => "CGK",
+            'durasi' => "1j 50m",
+            'tipe' => "langsung",
+            'jamTiba' => "07:50",
+            'tujuan' => "DPS",
+            'harga' => "900.000",
+            ],
+        ]
+    ]);
+});
+
+Route::get('/tiketDetail', function(){
+    return view('tiketDetail');
+});
