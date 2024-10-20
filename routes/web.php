@@ -71,3 +71,11 @@ Route::get('/tiketView', function () {
 Route::get('/tiketDetail', function(){
     return view('tiketDetail');
 });
+
+Route::get('/formPemesanan', function(){
+    return view('formPemesanan');
+});
+
+Route::get('/pembayaran', function(){
+    return view('pembayaran');
+});

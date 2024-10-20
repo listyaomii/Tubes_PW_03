@@ -61,6 +61,7 @@
         }
 
         footer{
+            width:100%;
             background-color: #CDEDFF;
         }
 
@@ -206,87 +207,98 @@
       </div>
     </nav>
 
-    <div class="mt-5 pt-5">
-        <h1 style="text-align:center;">Detail Tiket</h1>
+    <div class="mt-5 ps-5 pt-5">
+        <h3 style="text-align:start;">Detail Tiket</h3>
     </div>
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 10vh;">
-        <div class="card mt-5" style="box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border-radius:40px; width:fit-content;">
-            <div class="card-body justify-content-center">
-                <table>
-                    <tr>
-                        <td>
-                            Min, 20 Oktober 2024
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td style="vertical-align:top;"><strong>07:00 </strong><br>20 Okt</td>
-                        <!-- Garis vertikal di kolom ke-2 -->
-                        <td rowspan="6">
-                            <div class="vertical-line">
-                                <span class="circle top"></span>
-                                <span class="circle bottom"></span>
-                            </div>
-                        </td>
-                        <!-- Paragraf panjang di kolom ke-3 -->
-                        <td style="vertical-align:top; padding-left:20px;">
-                            Soekarno Hatta
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td rowspan="4" style="vertical-align:top; text-align:start; padding-left:20px;">
-                            <div class="card">
-                                <div class="d-flex align-items-center" style="gap: 10px;"> 
-                                    <img src="imgs/transNusa.jpeg" alt="logo transNusa" style="margin-bottom: 10px;">
-                                    <strong>TransNusa</strong>
-                                </div>
-                                <div class="divider"></div>
-                                <p><strong>Tiket Sudah Termasuk</strong></p>
-                                <p style="font-size:16px;"><i class="ms-2 fas fa-suitcase me-3"></i> Kabin 7 kg + Bagasi 20 kg</p>
-                                <p style="font-size:16px;"><i class="ms-2 fas fa-utensils me-3"></i> Tidak termasuk makanan</p>
-                            </div>
-                        </td>
 
-                    </tr>
-                    <tr></tr>
-                    <tr></tr>
-                    <tr></tr>
-                    <tr rowspan="3" style="vertical-align:bottom;">
-                        <td ><strong>08:40</strong><br>20 Okt</td>
-                        <td style="padding-left:20px;">Ngurah Rai</td>
-                    </tr>
-                </table>
-            </div>
+    <!-- form penumpang  -->
+    <div class="d-flex justify-content-start">
+        <div class="card ms-5 me-5">
+            <form onsubmit="return validateForm()">
+                <!-- radio  -->
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="tuan" value="Tuan">
+                    <label class="form-check-label" for="inlineRadio1">Tuan</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="nyonya" value="Nyonya">
+                    <label class="form-check-label" for="inlineRadio2">Nyonya</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="nona" value="Nona">
+                    <label class="form-check-label" for="inlineRadio3">Nona</label>
+                </div>
+
+                <!-- Nama, hp, email -->
+                <div class="mb-3 mt-3">
+                    <label for="nama" class="form-label" style="font-size:16px;"><strong>Nama Lengkap</strong></label>
+                    <input type="text" class="form-control" id="nama" placeholder="Nama Depan & Nama Belakang penumpang" required>
+                </div>
+                <div class="mb-3 mt-2">
+                    <label for="email" class="form-label" style="font-size:16px;"><strong>E-mail</strong></label>
+                    <input type="text" class="form-control" id="email" placeholder="email@gmail.com" required>
+                </div>
+                <div class="mb-3 mt-2">
+                    <label for="identitas" class="form-label" style="font-size:16px;"><strong>Nomor Identitas</strong></label>
+                    <input type="text" class="form-control" id="identitas" placeholder="Nomor KTP/Passport" required>
+                </div>
+                <div class="mb-3 mt-2">
+                    <label for="hp" class="form-label" style="font-size:16px;"><strong>Nomor Telepon</strong></label>
+                    <input type="text" class="form-control" id="hp" placeholder="Masukkan 11-13 digit" required>
+                </div>
+                <div class="mb-3 mt-2">
+                    <label for="tglLahir" class="form-label" style="font-size:16px;"><strong>Tanggal Lahir</strong></label>
+                    <input type="date" class="form-control" id="tglLahir"required>
+                </div>
+                <div class="mb-3 mt-2">
+                    <label for="wargaNegara" class="form-label" style="font-size:16px;"><strong>Kewarganegaraan</strong></label>
+                    <select class="form-select form-select-sm" id="wargaNegara" aria-label="Medium select example" required>
+                        <option value="" disabled selected>pilih warga negara</option>
+                        <option value="indonesia">Indonesia</option>
+                        <option value="thailand">Thailand</option>
+                        <option value="malaysia">Malaysia</option>
+                        <option value="singapore">Singapore</option>
+                        <option value="filipina">Philipina</option>
+                        <option value="australia">Australia</option>
+                        <option value="korea">Korea Selatan</option>
+                        <option value="jepang">Jepang</option>
+                        <option value="kamboja">Kamboja</option>
+                    </select>
+                </div>
+                <footer class="text-center text-lg-center mt-5">
+                    <div class="container p-4">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn btn-primary btn-lg">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </form>
         </div>
     </div>
 
-    <script>
-        const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-        const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+   <script>
+        const validateForm = () => {
+            const radioButtons = document.getElementsByName('inlineRadioOptions');
+            let isRadioSelected = false;
+            for (let radio of radioButtons) {
+                if (radio.checked) {
+                    isRadioSelected = true;
+                    break;
+                }
+            }
 
-        const today = new Date();
-        const dayName = days[today.getDay()];
-        const day = today.getDate();
-        const month = months[today.getMonth()];
-        const year = today.getFullYear();
-
-        const formattedDate = ${dayName}, ${day} ${month} ${year};
-
-        document.getElementById('current-date').textContent = formattedDate;
-    </script>
+            // Validasi setiap field
+            if (!isRadioSelected) {
+                alert("Pilih Tuan/Nyonya/Nona terlebih dahulu!");
+                return false;
+            }else{
+                alert("Data berhasil disimpan");
+                window.location.href = "{{url('/pembayaran')}}";
+                return false;
+            }
+        }
+   </script>
 </body>
-<footer class="text-center mt-5">
-    <div class="container p-4">
-        <div class="row align-items-center">
-            <div class="col-lg-6 text-lg-start">
-                <h1><strong>IDR 890.000</strong></h1>
-            </div>
-            <div class="col-lg-6 text-lg-end">
-                <a href="{{ url('/formPemesanan') }}" class="btn btn-primary btn-lg">Pesan Sekarang</a>
-            </div>
-        </div>
-    </div>
-</footer>
 </html>

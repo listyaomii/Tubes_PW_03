@@ -53,7 +53,7 @@
 
 </head>
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
           <a class="navbar-brand" href="#">
               <i class="fas fa-plane-departure me-2"></i> Atma Ticket
@@ -63,17 +63,24 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ms-auto">
-                  <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
-                  <a class="nav-link" href="{{url('/tiket')}}">Tiket</a>
+                  <a class="nav-link active" aria-current="page" href="{{url('/home')}}">Home</a>
+                  <a class="nav-link" href="{{ url('/tiket') }}">Tiket</a>
                   <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
-                  <a class="nav-link" href="{{url('/profile')}}">Profile</a>
-                  <a class="nav-link" href="#">Logout</a>
+                  <a class="nav-link" href="{{url('/refund')}}">Refund</a>
+                  <!-- <a class="nav-link" href="#">Login</a> -->
+                  <a class="nav-link" href="{{url('/profile')}}"><i class="bi bi-person-fill"></i></a>
               </div>
           </div>
       </div>
     </nav>
 
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="imgs/carousel-1.jpg" class="d-block w-100" alt="...">
@@ -85,6 +92,14 @@
           <img src="imgs/carousel-3.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 </body>
 
