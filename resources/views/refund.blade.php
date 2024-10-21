@@ -128,7 +128,7 @@
 
     <!-- Refund Container -->
     <div class="container-refund">
-        <h2 class="refund-title">Permintaan Refund Tiket</h2>
+        <h2 class="refund-title">History Refund Tiket</h2>
 
         <!-- Refund Ticket Card -->
         <div class="refund-ticket-card">
@@ -142,9 +142,9 @@
                 <p><strong>Waktu Keberangkatan:</strong> 08:30</p>
                 <p><strong>No Kursi:</strong> 12A</p>
             </div>
-            <div class="refund-footer">
+            <!-- <div class="refund-footer">
                 <button type="button" class="btn btn-refund" onclick="showToast('Tiket Garuda Indonesia GA 123 berhasil di-refund!')">Ajukan Refund</button>
-            </div>
+            </div> -->
         </div>
         <!-- end Refund Ticket Card -->
 
@@ -160,9 +160,9 @@
                 <p><strong>Waktu Keberangkatan:</strong> 10:00</p>
                 <p><strong>No Kursi:</strong> 15B</p>
             </div>
-            <div class="refund-footer">
+            <!-- <div class="refund-footer">
                 <button type="button" class="btn btn-refund" onclick="showToast('Tiket Lion Air JT 456 berhasil di-refund!')">Ajukan Refund</button>
-            </div>
+            </div> -->
         </div>
         <!-- end Refund Ticket Card -->
 
@@ -178,16 +178,16 @@
                 <p><strong>Waktu Keberangkatan:</strong> 12:30</p>
                 <p><strong>No Kursi:</strong> 8C</p>
             </div>
-            <div class="refund-footer">
+            <!-- <div class="refund-footer">
                 <button type="button" class="btn btn-refund" onclick="showToast('Tiket Sriwijaya Air SJ 789 berhasil di-refund!')">Ajukan Refund</button>
-            </div>
+            </div> -->
         </div>
         <!-- end Refund Ticket Card -->
     </div>
     <!-- end Refund Container -->
 
     <!-- Toast -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <!-- <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="refundToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <strong class="me-auto">Pemberitahuan</strong>
@@ -197,10 +197,10 @@
                 Tiket berhasil di-refund!
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
+    <!-- <script>
         function showToast(message) {
             const toastBody = document.getElementById('toastBody');
             toastBody.textContent = message;
@@ -208,6 +208,6 @@
             const toastElement = new bootstrap.Toast(document.getElementById('refundToast'));
             toastElement.show();
         }
-    </script>
+    </script> -->
 </body>
 </html>

@@ -29,6 +29,7 @@
 
         /* Body */
         body {
+            padding-top:80px;
             font-family: 'Alegreya', serif;
             font-size: 20px;
             background-color: #F8F9FA;
@@ -94,7 +95,7 @@
         /* Title */
         h2 {
             color: black;
-            margin-top: 20px;
+            padding-top: 0px;
             text-align: center;
             font-weight: bold;
             font-size: 32px;
@@ -126,6 +127,15 @@
             font-weight: bold;
             font-size: 16px;
             color: #333;
+        }
+
+        .toast {
+        min-width: 300px; /* Lebar minimal toast */
+        font-size: 18px; /* Ukuran font */
+        }
+
+        .toast-body {
+            font-weight: bold; /* Menebalkan teks */
         }
 
         /* Responsive Design */
@@ -172,7 +182,9 @@
     <!-- end navbar -->
 
     <!-- Title -->
+    <!-- <h2>Pesanan Aktif</h2> -->
     <h2>Pesanan Aktif</h2>
+    
 
     <!-- ticket card -->
     <div class="container-lg">
@@ -202,7 +214,8 @@
             <div class="ticket-footer">
                 <span>No Kursi: 12A</span>
                 <br>
-                <a href="#" class="btn btn-primary btn-sm">Detail Pesanan</a>
+                <a href="#" class="btn btn-danger btn-sm me-2" onclick="showToast('Tiket berhasil di-refund!')">Refund</a>
+                <a href="{{url('/e-ticket')}}" class="btn btn-primary btn-sm">Detail Pesanan</a>
             </div>
         </div>
     </div>
@@ -236,7 +249,8 @@
             <div class="ticket-footer">
                 <span>No Kursi: 14B</span>
                 <br>
-                <a href="#" class="btn btn-primary btn-sm">Detail Pesanan</a>
+                <a href="#" class="btn btn-danger btn-sm me-2" onclick="showToast('Tiket berhasil di-refund!')">Refund</a>
+                <a href="{{url('/e-ticket')}}" class="btn btn-primary btn-sm">Detail Pesanan</a>
             </div>
         </div>
     </div>
@@ -244,7 +258,29 @@
 
     <!-- Waves -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#CDEDFF" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,160C384,149,480,139,576,149.3C672,160,768,192,864,213.3C960,235,1056,245,1152,250.7C1248,256,1344,256,1392,256L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-
+    <!-- Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="refundToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Pemberitahuan</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toastBody">
+                Tiket berhasil di-refund!
+            </div>
+        </div>
+    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function showToast(message) {
+            const toastBody = document.getElementById('toastBody');
+            toastBody.textContent = message;
+
+            const toastElement = new bootstrap.Toast(document.getElementById('refundToast'));
+            toastElement.show();
+        }
+    </script>
+
 </body>
 </html>

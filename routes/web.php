@@ -34,3 +34,7 @@ Route::get('/profile', function () {
 Route::get('/refund', function () {
     return view('refund');
 });
+
+Route::get('/e-ticket', function () {
+    return view('e-ticket');
+});
