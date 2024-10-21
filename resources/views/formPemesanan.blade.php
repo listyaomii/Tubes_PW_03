@@ -200,7 +200,6 @@
                   <a class="nav-link active" aria-current="page" href="{{ url('/tiket') }}">Tiket</a>
                   <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
                   <a class="nav-link" href="{{url('/refund')}}">Refund</a>
-                  <!-- <a class="nav-link" href="#">Login</a> -->
                   <a class="nav-link" href="{{url('/profile')}}"><i class="bi bi-person-fill"></i></a>
               </div>
           </div>
@@ -208,7 +207,7 @@
     </nav>
 
     <div class="mt-5 ps-5 pt-5">
-        <h3 style="text-align:start;">Detail Tiket</h3>
+        <h3 style="text-align:start;">Data Penumpang</h3>
     </div>
 
     <!-- form penumpang  -->
