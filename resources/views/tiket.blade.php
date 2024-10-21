@@ -174,23 +174,9 @@
                         <input type="date" class="form-control" id="date" required>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col mb-3">
-                        <label for="class" class="form-label">Kelas</label>
-                        <select class="form-select" id="class" required>
-                            <option value="" disabled selected>Pilih Kelas Kursi</option>
-                            <option value="1">Ekonomi</option>
-                            <option value="2">Bisnis</option>
-                        </select>
-                    </div>
-                    <div class="col mb-3">
-                        <label for="date" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="date" required>
-                    </div>
-                </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary">Cari</button>
-                </div> -->
+                </div>
             </form>
             <script>
                 const validateForm = () => {
