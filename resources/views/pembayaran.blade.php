@@ -85,23 +85,18 @@
     </div>
 
     <script>
-        // Link pembayaran yang ingin kamu masukkan ke dalam QR code
-        var paymentLink = "https://www.dana.id/"; // Ganti dengan link pembayaran kamu
-
-        // Buat QR code di dalam elemen dengan id "qrcode"
+        var paymentLink = "https://www.dana.id/"; 
         var qrcode = new QRCode(document.getElementById("qrcode"), {
             text: paymentLink,
-            width: 200,  // Ukuran QR code (lebar)
-            height: 200  // Ukuran QR code (tinggi)
+            width: 200,  
+            height: 200  
         });
 
-        // JavaScript untuk menampilkan alert dan mengarahkan ke halaman Pesanan
         document.getElementById('confirm-payment').addEventListener('click', function() {
-            // Tampilkan alert
+      
             alert('Pembayaran Berhasil!');
 
-            // Redirect ke halaman Pesanan
-            window.location.href = "{{ url('/pesanan') }}";  // Ganti dengan URL halaman pesanan
+            window.location.href = "{{ url('/pesanan') }}";
         });
     </script>
 </body>
