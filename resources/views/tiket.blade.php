@@ -113,7 +113,7 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
           <a class="navbar-brand" href="#">
               <i class="fas fa-plane-departure me-2"></i> Atma Ticket
@@ -152,8 +152,12 @@
                         </select>
                     </div>
                     <div class="col mb-3">
-                        <label for="adult" class="form-label">Dewasa:</label>
-                        <input class="form-control" type="number" placeholder="Jumlah Orang Dewasa" id="adult" min="1" max="100" required>
+                        <label for="class" class="form-label">Kelas</label>
+                        <select class="form-select" id="class" required>
+                            <option value="" disabled selected>Pilih Kelas Kursi</option>
+                            <option value="1">Ekonomi</option>
+                            <option value="2">Bisnis</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
@@ -166,11 +170,11 @@
                         </select>
                     </div>
                     <div class="col mb-3">
-                        <label for="children" class="form-label">Anak-anak (< 2 tahun)</label><br>
-                        <input class="form-control" type="number" placeholder="Jumlah Anak-anak (jika tidak ada, harap diisi 0)" id="children" min="0" max="100" required>
+                        <label for="date" class="form-label">Tanggal</label>
+                        <input type="date" class="form-control" id="date" required>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col mb-3">
                         <label for="class" class="form-label">Kelas</label>
                         <select class="form-select" id="class" required>
@@ -186,7 +190,7 @@
                 </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary">Cari</button>
-                </div>
+                </div> -->
             </form>
             <script>
                 const validateForm = () => {

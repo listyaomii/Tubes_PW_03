@@ -236,11 +236,9 @@
                 |
             </span>
             <span class="input-group-text rounded-end-pill">
-                <i class="fas fa-child me-2"></i>
-                0
-                <span style="margin-left: 25px; text-align: end;">
+                <!-- <span style="margin-left: 25px; text-align: end;"> -->
                     Ekonomi
-                </span>
+                <!-- </span> -->
             </span>
         </div>
         <div class="btn-container mt-5 ms-5">

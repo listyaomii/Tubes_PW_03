@@ -269,7 +269,7 @@
                     <div class="container p-4">
                         <div class="row">
                             <div class="col-lg-12">
-                                <button type="submit" class="btn btn-primary btn-lg">Pesan Sekarang</a>
+                                <button type="submit" class="btn btn-primary btn-lg">Lanjutkan</a>
                             </div>
                         </div>
                     </div>
