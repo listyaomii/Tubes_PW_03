@@ -4,14 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-bgn6yUMVZKsd4DDbm6LMniO0m2Bb+CTEpL2PRzv6ExTfIrs5KP4MQu1RxynP2Bzv" crossorigin="anonymous"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
         /* Style untuk navbar */
         .navbar {
@@ -104,11 +100,6 @@
         .form-edit .btn {
             margin-right: 10px;
         }
-
-        .navbar .nav-link.active {
-            color: black;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -147,7 +138,7 @@
                 <li><span>Nomor Telepon:</span> 081234567898</li>
                 <li><span>Email:</span> peach@gmail.com</li>
                 <li><span>Tanggal Lahir :</span> 14 Februari 1997</li>
-                <li><span>Alamat:</span> Jalan Peach no 81A</li>
+                <!-- <li><span>Alamat:</span> Jalan Peach no 81A</li> -->
             </ul>
 
             <!-- Tombol Logout dengan modal -->
@@ -177,9 +168,9 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="jenisKelamin" class="form-label">Kelamin</label>
+                        <label for="jenisKelamin" class="form-label">Jenis Kelamin</label>
                         <select id="jenisKelamin" class="form-control">
-                            <option selected>Pilih Kelamin</option>
+                            <option selected>Pilih Jenis Kelamin</option>
                             <option>Laki-laki</option>
                             <option>Perempuan</option>
                         </select>
@@ -189,10 +180,10 @@
                         <input type="date" class="form-control" id="tanggalLahir">
                     </div>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="kotaTinggal" class="form-label">Kota Tempat Tinggal</label>
                     <input type="text" class="form-control" id="kotaTinggal" placeholder="Kota Tempat Tinggal">
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" placeholder="Masukkan Email">
@@ -212,15 +203,15 @@
                     <input type="password" class="form-control" id="confirmPassword" placeholder="Ulangi password baru">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <button type="reset" class="btn btn-danger">Batal</button>
+                <button type="submit" class="btn btn-primary" onclick="confirmSimpan('Simpan')">Simpan</button>
+                <button type="reset" class="btn btn-secondary"  onclick="confirmSimpan('Batal')">Batal</button>
             </form>
         </div>
     </div>
     <!-- end main content -->
 
     <!-- Modal Logout -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -232,14 +223,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger">Logout</button>
+                    <a href="{{url('/Login')}}" type="button" class="btn btn-danger">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal Delete Account -->
-    <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -251,7 +242,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger">Delete Account</button>
+                    <a href="{{url('/Login')}}" type="button" class="btn btn-danger">Delete Account</a>
                 </div>
             </div>
         </div>
@@ -287,6 +278,18 @@
                 formEdit.reset();
             });
         });
+    </script>
+    <script>
+        function confirmSimpan(action){
+            if(action==='Simpan'){
+                alert('Perubahan Berhasil');
+                return false;
+            }else if(action==='Batal'){
+                alert('Batal melakukan perubahan');
+                return false;
+            }
+            
+        }
     </script>
 </body>
 </html>

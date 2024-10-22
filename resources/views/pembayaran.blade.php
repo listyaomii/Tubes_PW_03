@@ -9,19 +9,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <style>
-        .navbar {
-            background-color: #CDEDFF;
+        .navbar .nav-link {
+            color: #000;
         }
 
-        footer {
-            background-color: #CDEDFF;
+        .navbar .nav-link.active {
+            color: black;
+            font-weight: bold;
         }
+
+        .navbar {
+            background-color: #CDEDFF;
+            margin-bottom: 0px;
+        }
+
 
         body {
             font-family: 'Alegreya', serif;
+            font-size: 20px;
         }
 
         .container {
@@ -54,7 +64,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
           <a class="navbar-brand" href="#">
               <i class="fas fa-plane-departure me-2"></i> Atma Ticket
@@ -65,9 +75,9 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ms-auto">
                   <a class="nav-link" href="{{url('/home')}}">Home</a>
-                  <a class="nav-link" href="{{url('/tiket')}}">Tiket</a>
+                  <a class="nav-link active" aria-current="page" href="{{ url('/tiket') }}">Tiket</a>
                   <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
-                  <a class="nav-link active" href="#">Pembayaran</a>
+                  <a class="nav-link" href="{{url('/refund')}}">Refund</a>
                   <a class="nav-link" href="{{url('/profile')}}"><i class="bi bi-person-fill"></i></a>
               </div>
           </div>
@@ -96,7 +106,7 @@
       
             alert('Pembayaran Berhasil!');
 
-            window.location.href = "{{ url('/pesanan') }}";
+            window.location.href = "{{ url('/e-ticket') }}";
         });
     </script>
 </body>
